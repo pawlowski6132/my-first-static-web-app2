@@ -19,3 +19,10 @@ main > h1 {
   text-align: center;
   font-size: 3.5em;
 }
+
+
+/* changing h1 */
+h1 {
+  font-size: 2em;
+  color: purple;
+}
