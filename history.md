@@ -1539,3 +1539,13 @@ Certainly! Let's break down the steps to achieve this:
    Customize the chart type (e.g., line, bar, pie) and styling according to your needs.
 
 Remember to replace the placeholder URLs and data with your actual API endpoint and JSON structure. Happy charting! 📊🎉
+
+## Monday 2/12/24
+
+I sucssfully modifed the javascript api call to take variables at the end of the strig including hard copying the api_key and the season since, these won't change.
+
+I put a text input on an HTML form and a submit button. Inputting '8' in the text box and hitting Submit will take that team (chelsea) and append it to the api string along with the 'config' parameter that holds my season and api key.
+
+It works and I can see it in the console log.
+
+![Alt text](images/output_2-12-24.png)

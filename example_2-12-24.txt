@@ -1,0 +1,25 @@
+This code did NOT cause errors and I was able to use this with Chart.js but, it couldn't draw a chart from this  
+
+const ctx = document.getElementById('myChart').getContext('2d');
+
+  const chartData = {
+    labels: response.data.league.seasons.map(seasons => seasons.seasonID), // Replace with your actual labels
+    datasets: [{
+      label: 'My Chart',
+      data: response.data.league.seasons.map(seasons => seasons.seasonName), // Replace with your actual data values
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1,
+    }],
+  };
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: chartData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+
+};

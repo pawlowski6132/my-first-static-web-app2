@@ -17,16 +17,29 @@
 
     <h1>It is what it is Mutha!</h1>
 
-    <canvas id="myChart"></canvas>
+    <!-- <canvas id="myChart"></canvas> -->
 
 
 
 
   </main>
 
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script> -->
+
+  <form id="searchForm">
+
+    <input type="text" name="team_id" placeholder="Enter Team ID">
+    <button>Search</button>
+
+
+  </form>
+
+
+<!-- I have to make sure app.js is run AFTER the DOM model is loaded. -->
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <script src="app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
 </body>
 
 </html>
