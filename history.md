@@ -1472,3 +1472,70 @@ https://api.statorium.com/api/v1/teams/8/?season_id=252&apikey=0dc62921775ba39d7
 I was able to use the new EPL api to include it in a javacript and html POC. I called the Axios library using CDN, called the get method and put it in an async function and pulled back basic league data into a javascript json object. I used Udemy to walk me through and it all worked. Here are the results in Liveview
 
 ![example](/images/2-8-24_axios_get_method.png)
+
+
+## ChatGPT answer to the question, how to parse json obj buit by axios into chart.js
+
+Certainly! Let's break down the steps to achieve this:
+
+1. **Fetching JSON Data with Axios**:
+   To retrieve data from an API endpoint using Axios, you can make a GET request. Here's an example of how to do it:
+
+    ```javascript
+    const axios = require('axios');
+
+    async function fetchDataFromApi() {
+        try {
+            const response = await axios.get('https://api.example.com/data'); // Replace with your API endpoint
+            const jsonData = response.data; // Parsed JSON data
+            return jsonData;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+
+    const apiData = await fetchDataFromApi();
+    ```
+
+2. **Creating a Chart with Chart.js**:
+   Once you have the JSON data, you can use Chart.js to create a chart. First, make sure you include the Chart.js library in your HTML:
+
+    ```html
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    ```
+
+   Next, create an HTML canvas element where you want to render the chart:
+
+    ```html
+    <canvas id="myChart"></canvas>
+    ```
+
+   Finally, use the fetched JSON data to create your chart. For example, if your data contains labels and values for a bar chart:
+
+    ```javascript
+    const ctx = document.getElementById('myChart').getContext('2d');
+
+    const chartData = {
+        labels: apiData.labels, // Replace with your actual labels
+        datasets: [{
+            label: 'My Chart',
+            data: apiData.values, // Replace with your actual data values
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+        }],
+    };
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
+    ```
+
+   Customize the chart type (e.g., line, bar, pie) and styling according to your needs.
+
+Remember to replace the placeholder URLs and data with your actual API endpoint and JSON structure. Happy charting! 📊🎉
