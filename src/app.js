@@ -26,7 +26,17 @@ form.addEventListener('submit', async function (e) {
   // Here I'm calling the API and inserting the team variable into the get request and the config
   // It works!!
   const res = await axios.get(`https://api.statorium.com/api/v1/teams/${team}`, config);
-  console.log(res.data)
+  // console.log(res.data)
+  
+  res.data.team.players.forEach(player => {
+    //console.log(player.fullName);
+    //console.log(player.photo);
+    const img = document.createElement('img');
+    img.src = player.photo;
+    document.body.append(img);
+
+
+});
 
 });
 
