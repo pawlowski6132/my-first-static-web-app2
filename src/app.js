@@ -28,13 +28,17 @@ form.addEventListener('submit', async function (e) {
   const res = await axios.get(`https://api.statorium.com/api/v1/teams/${team}`, config);
   // console.log(res.data)
   
-  res.data.team.players.forEach(player => {
+  res.data.team.players.forEach(player_man => {
     //console.log(player.fullName);
     //console.log(player.photo);
     const img = document.createElement('img');
-    img.src = player.photo;
+    img.src = player_man.photo;
     document.body.append(img);
 //delete this comment 2/13/2
+//delete this comment 2/13/24 again from Panera
+
+//use Map to create a NEW array with just players and/or positions
+
 
 
 });
