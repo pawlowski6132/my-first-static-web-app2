@@ -34,6 +34,7 @@ form.addEventListener('submit', async function (e) {
     const img = document.createElement('img');
     img.src = player.photo;
     document.body.append(img);
+//delete this comment 2/13/2
 
 
 });
