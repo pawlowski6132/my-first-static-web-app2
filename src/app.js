@@ -69,6 +69,8 @@ form.addEventListener('submit', async function (e) {
     // add the image to the HTML document
     document.body.append(img);
 
+
+
 //delete this comment 2/13/2
 //delete this comment 2/13/24 again from Panera
 //delete this comment 2/14/24 again from Panera incorporated
@@ -79,7 +81,78 @@ form.addEventListener('submit', async function (e) {
 
 });
 
+// 2-15-24. I just added the below. I'm creating a table and adding the player names, jersey #, image to the table
+
+// this creates a table
+const tbl = document.createElement('table');
+
+// add the table to the HTML document
+document.body.append(tbl);
+
+// this creates a header row
+let header = document.createElement('tr');
+tbl.append(header);
+
+// this creates a header cell
+let nameHeader = document.createElement('th');
+
+// add the text to the header cell
+nameHeader.textContent = "Name";
+
+// add the header cell to the header row
+header.append(nameHeader);
+
+// this creates a header cell
+let jerseyNumberHeader = document.createElement('th');
+
+// add the text to the header cell
+jerseyNumberHeader.textContent = "Jersey Number";
+
+// add the header cell to the header row
+header.append(jerseyNumberHeader);
+
+
+// this function cycles through the players and adds them to the table
+
+res.data.team.players.forEach(player_man => {
+  // create a row
+  const row = document.createElement('tr');
+  // add the row to the table
+  tbl.append(row);
+  
+  // create a cell
+  const name = document.createElement('td');
+  // add the player name to the cell
+  name.textContent = player_man.fullName;
+  // add the cell to the row
+  row.append(name);
+
+  // create a cell
+  const jerseyNumber = document.createElement('td');
+  // add the player jersey number to the cell
+  jerseyNumber.textContent = player_man.playerNumber;
+  // add the cell to the row
+  row.append(jerseyNumber);
+
+// this creates a cell
+  const playerImage = document.createElement('td');
+  // create an image tag
+  const img_2 = document.createElement('img');
+  // assignes the value of the photo from the JSON object of players which is an image URL
+  img_2.src = player_man.photo;
+  // add the image to the cell
+  playerImage.append(img_2);
+// add the cell to the row
+  row.append(playerImage);
+
+})
+
 });
+
+
+
+
+
 
 
 

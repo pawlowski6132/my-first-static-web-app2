@@ -1549,3 +1549,12 @@ I put a text input on an HTML form and a submit button. Inputting '8' in the tex
 It works and I can see it in the console log.
 
 ![Alt text](images/output_2-12-24.png)
+
+## Wednesday 2/14/24
+Did a deep dive to understand what all the javascript is doing and documented.
+At this point, the site is using Axios to connect to an API endpoint, bring in the json object, and pull the photo item from the object and display it in an image element in HTML.
+
+## Thursday 2/15/24
+Great progress in being able to read data from the API and put it into a table
+
+![Alt text](images/api_to_tbl.png)
