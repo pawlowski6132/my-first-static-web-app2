@@ -1558,3 +1558,6 @@ At this point, the site is using Axios to connect to an API endpoint, bring in t
 Great progress in being able to read data from the API and put it into a table
 
 ![Alt text](images/api_to_tbl.png)
+
+## Friday 2/15/24
+I added some formatting to the table using inline style tags. I also added a header title to the column of images in the table. Finally, I added an h3 tag that enclosed the team name.

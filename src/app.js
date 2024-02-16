@@ -44,6 +44,8 @@ form.addEventListener('submit', async function (e) {
   const res = await axios.get(`https://api.statorium.com/api/v1/teams/${team}`, config);
   // console.log(res.data)
   
+
+
   // Ref #291 'WTF is JSON' If Results begin/end with {...} result is JSON object; [...], Array Text
   // Ref #189 'Object Literals'
   // Ref #191 'Accessing data out of Objects'
@@ -81,6 +83,10 @@ form.addEventListener('submit', async function (e) {
 
 });
 
+
+var h3Tag = document.createElement('h3');
+h3Tag.textContent = res.data.team.teamName;
+document.body.append(h3Tag);
 // 2-15-24. I just added the below. I'm creating a table and adding the player names, jersey #, image to the table
 
 // this creates a table
@@ -89,27 +95,39 @@ const tbl = document.createElement('table');
 // add the table to the HTML document
 document.body.append(tbl);
 
-// this creates a header row
+// 1) this creates a header row
 let header = document.createElement('tr');
 tbl.append(header);
 
-// this creates a header cell
+// 2) this creates a header cell
 let nameHeader = document.createElement('th');
 
-// add the text to the header cell
+// 3) add the text to the header cell
 nameHeader.textContent = "Name";
 
-// add the header cell to the header row
+// 4) add the header cell to the header row
 header.append(nameHeader);
 
-// this creates a header cell
+// 2) this creates a header cell
 let jerseyNumberHeader = document.createElement('th');
 
-// add the text to the header cell
+// 3) add the text to the header cell
 jerseyNumberHeader.textContent = "Jersey Number";
 
-// add the header cell to the header row
+// 4) add the header cell to the header row
 header.append(jerseyNumberHeader);
+
+// 2) this creates a header cell
+let imageHeader = document.createElement('th');
+
+// 3) add the text to the header cell
+imageHeader.textContent = "Picture";
+
+// 4) add the header cell to the header row
+header.append(imageHeader);
+
+
+
 
 
 // this function cycles through the players and adds them to the table
