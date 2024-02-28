@@ -6,7 +6,7 @@ html, body {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #ffcc00;
 }
 
 main {
@@ -24,5 +24,17 @@ main > h1 {
 /* changing h1 */
 h1 {
   font-size: 2em;
-  color: purple;
+  color: #d40511;
+}
+
+main > h2 {
+  font-size: 1.5em;
+  color: #d40511;
+  text-align: center;
+}
+
+main > h3 {
+  font-size: 1.2em;
+  color: #d40511;
+  text-align: center;
 }

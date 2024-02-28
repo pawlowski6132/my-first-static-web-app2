@@ -1561,3 +1561,22 @@ Great progress in being able to read data from the API and put it into a table
 
 ## Friday 2/15/24
 I added some formatting to the table using inline style tags. I also added a header title to the column of images in the table. Finally, I added an h3 tag that enclosed the team name.
+
+## Monday 2/26/24
+Leaving Javascript for now. I decided to re-focus on html/css. I want to take the simple table I built using the sanctorum API and begin to style it using DHL colors as an example. I want to take it a little bit further and see if I can design a site that is interactive, has menu layouts, is organized, receives inputs, etc. I want to create a DHL branded designed site that has Premiere League content. The goal is to envision what a final DHL site for AEMCE might look like and built it.
+
+Today:
+- Changed background color of the page to DHL yeller
+- Changed the title and subtitles to DHL red
+- Centered everything
+
+I did this all in the CSS file.
+
+I also noticed that , when I originally creted the table, I included in-line styling. I'll have to move this to the CSS file.
+
+![Alt text](<images/CSS 2024-02-26 090046.png>)
+
+## Wednesday 2/28/24
+Brushed up a little more on CSS to continue to layout the site. One thing I picked up from reviewing the Udemy training was what a **div** and **sp** is and how to use it in conjunction with CSS. It helps to know what an inline element is versus a block element. A block element takes up the whole page from left to right. An inline element takes up less than that and you can fit multiple inline elements on the same "line". Anything you put within a **div** element is essentially grouped together into a block element. It's a way to organize other elements. **sp** does the same but for inline elements.
+
+Next, I'd like to take my three header elements and put them into **divs** or **sps** to play around with how to organize and layout the first part of my site. Also, play with CSS properties such as border colors, styles, etc.
