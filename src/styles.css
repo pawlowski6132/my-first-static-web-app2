@@ -38,3 +38,15 @@ main > h3 {
   color: #d40511;
   text-align: center;
 }
+
+#team_number {
+  text-align: center;
+  font-size: 1.5em;
+  color: #d40511;
+  border-width: 10px;
+  border-color: #d40511;
+  border-style: solid;
+  /*this maintains the original size of the input box*/
+  box-sizing: border-box;
+  padding: 5px;
+}
