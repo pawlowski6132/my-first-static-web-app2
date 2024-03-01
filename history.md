@@ -1583,3 +1583,6 @@ Next, I'd like to take my three header elements and put them into **divs** or **
 
 ## Thursday 2/29/24 (leapyear)
 Played around a little with border and padding on the input text and button on the form using CSS properties. I put both of these in a div. Although, while both the header elements and this div element content are both block, they aren't rendering on the page the same way. The headers aren't spannning across the page but, are centered as if I've defined ad width and height. The inputbox and button are acting like a block element and spanning the whole width of the page. I think I'll begin to reference the HTML/CSS book I have to work more on the layout.
+
+## Friday 3/1/24
+Starting to learn about boostrap, which I want to use to help me layout my site. I reviewed videos #122 and #123 just to get started.
