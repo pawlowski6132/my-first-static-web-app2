@@ -1586,3 +1586,8 @@ Played around a little with border and padding on the input text and button on t
 
 ## Friday 3/1/24
 Starting to learn about boostrap, which I want to use to help me layout my site. I reviewed videos #122 and #123 just to get started.
+
+## Monday 3/4/24
+All I did today was watch video #124 and included the bootstrap main css CDN and the accompanying javascript libraries and I inlcluded both in the index.html.
+
+
