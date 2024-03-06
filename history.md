@@ -1590,4 +1590,5 @@ Starting to learn about boostrap, which I want to use to help me layout my site.
 ## Monday 3/4/24
 All I did today was watch video #124 and included the bootstrap main css CDN and the accompanying javascript libraries and I inlcluded both in the index.html.
 
-
+## Tuesday 3/6/24
+Video #125. Added a button element to the html to test the connection to the cdn bootstrap library. seems to be working.
