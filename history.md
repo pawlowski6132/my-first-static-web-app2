@@ -488,3 +488,19 @@ These all should be done but, I think I'll start with the javascrpt decision sit
 
 I will need to design and layout the POC and begin to build.
 
+## Tuesday 6/4/24
+I've decided to pursue trying to connct to my persoal Azure SQL DB via Microsoft Data API Builder.
+
+### Step One - Install locally
+I've installed the CLI tool following the instructions from Microsoft here:
+https://learn.microsoft.com/en-us/azure/data-api-builder/how-to-install-cli
+
+Everything seems to have installed corrctly and I have version 1.1.7. This is now in general availability.
+![Alt text](<images/dab install.png>)
+
+### Step Two - Deploy to Azure Static Web App
+Had to install Static Web App CLI first:
+npm install -g @azure/static-web-apps-cli
+
+swa db init --database-type mssql
+
