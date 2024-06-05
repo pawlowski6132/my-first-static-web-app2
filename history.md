@@ -504,3 +504,48 @@ npm install -g @azure/static-web-apps-cli
 
 swa db init --database-type mssql
 
+dab add guitar_brands --source dbo.guitar_brands --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
+I entered the above in the terminal window and it all worked.
+
+I then went through the instructions in the rest of this to connect the DB in my static website and it actually Works!!!
+
+https://learn.microsoft.com/en-us/azure/data-api-builder/how-to-deploy-static-web-app
+
+![Alt text](<images/static web connected via dab to db.png>)
+
+I can't belive how easy this was to connect my static web app to my database.
+That's it for today. I will work to create some api end points to pull dat from this database next into a table in my website.
+
+super exciting.
+
+
+![Alt text](<images/swa and dab cli entries.png>)
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands
+
+## Wednesday 6/5/24
+
+https://github.com/Azure/data-api-builder
+
+So, couple issues, when I try to run this in the browser:
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands
+
+It takes a couple page refreshes to get it to load, not sure why.
+
+Also, I can't get this to run locally easily because:
+
+1. I can't use dab start due to the default config name not matching the expeted default. I think I found a way around this by puting in some parameters into the config cli like this:
+
+PS C:\Users\pawlo\my-first-static-web-app2> dab start --config swa-db-connections/staticwebapp.database.config.json
+Information: Microsoft.DataApiBuilder 1.1.7
+Information: User provided config file: swa-db-connections/staticwebapp.database.config.json
+Loading config file from swa-db-connections/staticwebapp.database.config.json.
+Information: Loaded config file: swa-db-connections/staticwebapp.database.config.json
+Error: Invalid connection-string provided in the config.
+Error: Failed to start the engine.
+
+But, as you can see, while I think it's finding the file, the connection string is blank. That doesn't seem to be a problem while syncing this and loading it to the SWA but, it is when trying to run locally. I can live without running it locally for now. I'll just have to test by loading to swa always.
+
+I think I'll try to create a simple web page that connects to the rest api endpoint I create and brings the json data into a table.
+
