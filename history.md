@@ -549,3 +549,36 @@ But, as you can see, while I think it's finding the file, the connection string 
 
 I think I'll try to create a simple web page that connects to the rest api endpoint I create and brings the json data into a table.
 
+## Monday 6/17/24
+Ok, progress to date:
+
+I hav a Azure Static Website built:
+my-first-static-web-app2
+
+I contacted the Premiere League and signed up for an API.
+
+I made a website that connects to the API
+https://jolly-tree-09d677910.4.azurestaticapps.net/
+
+I build and workon the site in VS Code and sync to Github which automatically publishes to Azure Static Web App
+
+I hae a free database in Azure.
+
+I made a table called Guitar Brands
+
+I connected that table in Azure to the Static Web app
+
+I used the DAB CLI to create an end point, hosted in the SWA connected to the database.
+
+I can successfully test that it works by going here and refreshing three times (not sure why it doesn't work the first time)
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands
+
+Supposedly, end point can handle all the api verbs.
+
+Also, you can just put ODA directly into the URL strig like:
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand eq 'Gibson'
+
+I'll try to use that in my new webpage and I'll also try to use each verb.
+

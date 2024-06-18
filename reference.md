@@ -20,4 +20,7 @@ username: j.pawlowski6132
 password: 61326132Bb*
 [statorium](https://statorium.com/) *<== Click Here*
 
-
+6/17/24
+Link to Static Website with API built from DAB:
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands
+(same site as the Preiere league api site)
