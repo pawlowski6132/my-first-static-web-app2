@@ -582,3 +582,65 @@ https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$
 
 I'll try to use that in my new webpage and I'll also try to use each verb.
 
+## Tuesday 6/18/24
+
+Today I was able to create an HTML page that loaded guitar info using the DAB api.
+
+Here's how it works:
+
+1. Create an HTML page
+   1. Load the AXIOS CDN script URL
+   2. Load the script pointing to app2.js (created this new too)
+2. Create app2.js
+   1. Just did a simple axios command that points to the DAB created API URL in the static web app I built. I did a console log to display the results.
+
+Note:
+It wouldn't run locally and I was getting a CORS error. I found out that that happens when I try to run locally in LiveServer.
+
+I published this and ran it live and I was able to get results:
+
+![Alt text](<images/dab api connection.png>)
+
+## Wednesday 6/19/24
+
+OK. I can use the DAB REST API endpoint to GET data from my Azure SQL DB connected and through the Azure Static Web App.
+
+I wanted to start to understand how I can use the POST verb to create a new record. I figure if I can do that, PUSH and DELETE should be pretty simple.
+
+I wasn't sure if there was a separate discreet Endpoint but, I was thinking I use the same Endpoint but just use a different verb in the type. I just assume that the default was GET or something like that.
+
+Rather than try to mock something up in HTML and javascript, etc. I thought I'd take all that out of the equatio and just use Postman. After some back-and-forth, I got it to work.
+
+I created a Collection called "dab_example".
+
+The first thing I did was to test the GET. Again, after TWO executions (like when I post the URL directly into the browser), I got it to work:
+
+![Alt text](images/postman_get.png)
+
+I was fooling around with the POST to create a new record. I wasn't sure how to configure POSTMAN especially to pass the payload. I watched this video and it was helpful.
+
+https://www.youtube.com/watch?v=rZILP_3OP-A
+
+I also referred to this Microsoft DAB documentation:
+
+https://learn.microsoft.com/en-us/azure/data-api-builder/rest
+
+I got what looked like 'non error' results in POSTMAN.
+
+![Alt text](images/postma_post_results.png)
+
+The key was to load the payload in raw form and ensure content-type is json:
+
+![Alt text](images/postman_post_body.png)
+
+I re-ran the GET but didn't see the new record. 
+
+I went the Azure Portal to look at the database content and saw the new record!!
+
+![Alt text](images/azure_db_post_result.png)
+
+## Thursday 6/20/24
+
+Just started to create the form (guitars.html) that I'll use to collect the guitar brand information that I hope to send to the DAB API using POST method to add a new record to my database.
+
+If this works, it's much easier than using Azure Functions.
