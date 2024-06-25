@@ -644,3 +644,37 @@ I went the Azure Portal to look at the database content and saw the new record!!
 Just started to create the form (guitars.html) that I'll use to collect the guitar brand information that I hope to send to the DAB API using POST method to add a new record to my database.
 
 If this works, it's much easier than using Azure Functions.
+
+## Monday 6/24/24
+
+I'm beginning to build out some form data. The first thing I want to do is to uild a search form that allows a user to enter a brand of guitar in a text box, hit enter and pass the ODATA query to the website and return json.
+
+Here's what I paste into the URL:
+
+`https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand eq 'Gibson'`
+
+Here's what it looks like in the URL after hitting Enter:
+
+`https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand%20eq%20%27Gibson%27`
+
+Here's the result:
+![Alt text](images/search_results.png)
+
+I tried to put some generic Form code in:
+
+
+```html
+<form action="https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands" method="get">
+  <label for="brand">Brand:</label>
+  <input type="text" id="brand" name="brand"><br><br>
+  <input type="submit" value="Submit">
+</form>
+```
+
+
+
+And got this:
+
+`https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?brand=Gibson`
+
+![Alt text](<images/form_search 6-24-24.png>)
