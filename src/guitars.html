@@ -33,7 +33,14 @@ Odata Form
     <input type="submit" value="Submit">
 </form>
 
-%24filter=Male
+<script>
+    function submitForm() {
+        const brand = document.getElementById('brand').value;
+        const encodedBrand = encodeURIComponent(brand);
+        const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand%20eq%20'${encodedBrand}'`;
+        window.location.href = url;
+    }
+</script>
 
 
 
