@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter by Brand post 4</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Filter by Brand post 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     
 </head>
@@ -29,7 +29,7 @@
     </form>
 
     <script>
-    document.getElementById('brandForm').addEventListener('submit', function(event) {
+/*     document.getElementById('brandForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const formData = new FormData(document.getElementById('brandForm'));
@@ -47,7 +47,47 @@
             console.error('Response error:', error.response.data);
         }
         });
-});
+}); */
+
+document.getElementById('brandForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Gather form data
+  const brand_sk = parseInt(document.getElementById('id_brand_sk').value);
+  const brand = document.getElementById('id_brand').value;
+  const origin = document.getElementById('id_origin').value;
+  const mfg_url = document.getElementById('id_mfg_url').value;
+  const established = parseInt(document.getElementById('id_established').value);
+
+  // Create a JSON object
+    const payload = {
+        brand_sk,
+        brand,
+        origin,
+        mfg_url,
+        established
+    };
+
+    // Set Content-Type header manually
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands';
+
+    axios.post(url, payload, { headers })
+        .then(response => {
+        console.log('Response data:', response.data);
+        // Handle the response data here
+        })
+        .catch(error => {
+        console.error('There was an error!', error);
+        if (error.response) {
+            console.error('Response error:', error.response.data);
+        }
+        });
+    });
+
 
     </script>
 </body>

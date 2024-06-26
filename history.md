@@ -702,3 +702,7 @@ From here, I think I can understand the queries I would like in my page and figu
 I'll also need to figure out how to receive the JSON and put it in a table.
 
 I also have the results of successful POST command in POstman. I need to create this in HTML/javascript next
+
+## Wednesday 6/26/24
+
+Lots of experimentation trying to code up POST. Trying Axios, Fetch, etc. No luck. Unresolved errors. It works in Postman so...
