@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter by Brand</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form id="brandForm">
+        <label for="id_brand">Filter by Brand:</label>
+        <input type="text" id="id_brand" name="brand" placeholder="Gibson">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('brandForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const brand = document.getElementById('id_brand').value;
+            const encodedBrand = encodeURIComponent(`brand eq '${brand}'`);
+            const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=${encodedBrand}`;
+
+            axios.get(url)
+                .then(response => {
+                    console.log(response.data);
+                    // Handle the response data here
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                });
+        });
+    </script>
+</body>
+</html>
+

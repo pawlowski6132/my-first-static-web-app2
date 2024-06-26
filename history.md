@@ -678,3 +678,27 @@ And got this:
 `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?brand=Gibson`
 
 ![Alt text](<images/form_search 6-24-24.png>)
+
+
+
+## Tuesday 6/25/24
+
+Wow. Bing is cool. I didn't even write a stitch of code and I got the results I want.
+
+I was trying to find a way to use the ODATA query method to filter results from my API. The first few attemts resulted in in URI encoding issues but, ultimately, I was able to get some code from Bing that worked.
+
+I started a stand alone HTML file, guitars2.html tha returned the correct URL and thus the correct results.
+
+URL:
+
+`https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand%20eq%20%27Gibson%27`
+
+![Alt text](<images/correct odata results.png>)
+
+![Alt text](images/guitars2.png)
+
+From here, I think I can understand the queries I would like in my page and figure out the write html/javascript.
+
+I'll also need to figure out how to receive the JSON and put it in a table.
+
+I also have the results of successful POST command in POstman. I need to create this in HTML/javascript next
