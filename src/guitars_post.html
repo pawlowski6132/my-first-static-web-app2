@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter by Brand3</title>
+    <title>Filter by Brand post 4</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -29,23 +29,25 @@
     <script>
         document.getElementById('brandForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const brand_sk = document.getElementById('id_brand_sk').value;
+            const brand_sk = parseInt(document.getElementById('id_brand_sk').value);
             const brand = document.getElementById('id_brand').value;
             const origin = document.getElementById('id_origin').value;
             const mfg_url = document.getElementById('id_mfg_url').value;
-            const established = document.getElementById('id_established').value;
+            const established = parseInt(document.getElementById('id_established').value);
 
             const payload = {
                 value: [
                     {
-                        brand_sk: parseInt(brand_sk),
+                        brand_sk: brand_sk,
                         brand: brand,
                         origin: origin,
                         mfg_url: mfg_url,
-                        established: parseInt(established)
+                        established: established
                     }
                 ]
             };
+
+            console.log('Payload:', JSON.stringify(payload)); // Log the payload
 
             const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands';
 
@@ -68,4 +70,3 @@
     </script>
 </body>
 </html>
-
