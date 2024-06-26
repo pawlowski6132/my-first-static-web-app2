@@ -20,13 +20,18 @@
             const encodedBrand = encodeURIComponent(`brand eq '${brand}'`);
             const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=${encodedBrand}`;
 
+            console.log('Request URL:', url); // Log the URL
+
             axios.get(url)
                 .then(response => {
-                    console.log(response.data);
+                    console.log('Response data:', response.data);
                     // Handle the response data here
                 })
                 .catch(error => {
                     console.error('There was an error!', error);
+                    if (error.response) {
+                        console.error('Response error:', error.response.data);
+                    }
                 });
         });
     </script>
