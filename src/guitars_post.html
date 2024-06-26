@@ -49,17 +49,21 @@
 
             const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands';
 
-            axios.post(url, payload)
-                .then(response => {
-                    console.log('Response data:', response.data);
-                    // Handle the response data here
-                })
-                .catch(error => {
-                    console.error('There was an error!', error);
-                    if (error.response) {
-                        console.error('Response error:', error.response.data);
-                    }
-                });
+            axios.post(url, payload, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log('Response data:', response.data);
+                // Handle the response data here
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+                if (error.response) {
+                    console.error('Response error:', error.response.data);
+                }
+            });
         });
     </script>
 </body>
