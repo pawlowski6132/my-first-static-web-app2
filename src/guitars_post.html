@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter by Brand</title>
+    <title>Filter by Brand3</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
@@ -38,11 +38,11 @@
             const payload = {
                 value: [
                     {
-                        brand_sk: brand_sk,
+                        brand_sk: parseInt(brand_sk),
                         brand: brand,
                         origin: origin,
                         mfg_url: mfg_url,
-                        established: established
+                        established: parseInt(established)
                     }
                 ]
             };
@@ -68,3 +68,4 @@
     </script>
 </body>
 </html>
+
