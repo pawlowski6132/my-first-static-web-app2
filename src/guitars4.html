@@ -28,10 +28,10 @@
     <table id="resultsTable">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Brand</th>
-                <th>Model</th>
-                <th>Price</th>
+                <th>Origin</th>
+                <th>URL</th>
+                <th>Established</th>
             </tr>
         </thead>
         <tbody id="data"></tbody>
@@ -66,10 +66,10 @@
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${item.Id}</td>
-                    <td>${item.Brand}</td>
-                    <td>${item.Model}</td>
-                    <td>${item.Price}</td>
+                    <td>${item.brand}</td>
+                    <td>${item.origin}</td>
+                    <td>${item.url}</td>
+                    <td>${item.established}</td>
                 `;
                 tableBody.appendChild(row);
             });
