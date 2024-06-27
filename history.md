@@ -706,3 +706,13 @@ I also have the results of successful POST command in POstman. I need to create 
 ## Wednesday 6/26/24
 
 Lots of experimentation trying to code up POST. Trying Axios, Fetch, etc. No luck. Unresolved errors. It works in Postman so...
+
+And just as I was trying one more thing and shutting everyting down, it works!!!!!!!
+
+The html file guitars_post.html with title Filter by Brand Post 5. I was taking suggestions and tryig to POST Form data but went to JSON payload using Axios. I hit enter and got nice clean Console with no errors.
+
+guitars_post.html
+
+![Alt text](<images/axios post success console.png>)
+
+![Alt text](<images/new record.png>)

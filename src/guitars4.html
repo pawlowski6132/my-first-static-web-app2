@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter by Brand</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form id="brandForm">
+        <label for="id_brand">Filter by Brand:</label>
+        <input type="text" id="id_brand" name="brand" placeholder="Gibson">
+        <input type="submit" value="Submit">
+    </form>
+
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="data"></tbody>
+    </table>
+
+    <script>
+        document.getElementById('brandForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const brand = document.getElementById('id_brand').value;
+            const encodedBrand = encodeURIComponent(`brand eq '${brand}'`);
+            const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=${encodedBrand}`;
+
+            console.log('Request URL:', url); // Log the URL
+
+            axios.get(url)
+                .then(response => {
+                    console.log('Response data:', response.data);
+                    displayData(response.data.value);
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                    if (error.response) {
+                        console.error('Response error:', error.response.data);
+                    }
+                });
+        });
+
+        function displayData(data) {
+            const tableBody = document.getElementById('data');
+            tableBody.innerHTML = ''; // Clear any existing rows
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.Id}</td>
+                    <td>${item.Brand}</td>
+                    <td>${item.Model}</td>
+                    <td>${item.Price}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>
