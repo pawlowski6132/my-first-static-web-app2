@@ -716,3 +716,16 @@ guitars_post.html
 ![Alt text](<images/axios post success console.png>)
 
 ![Alt text](<images/new record.png>)
+
+## Thursday 6/27/24
+
+Quickly able to take the work done to create ODATA search query on the guitar brand API and return results into a table.
+
+See guitars4.html
+
+![Alt text](<images/query results to table.png>)
+
+All the guitar*.html files work but use different methods. For GET, I think I'll stick with AXIOS
+
+Next I need to figure out how to just request ALL the records into a table. Maybe figure out how to call the first 20 records and have ability to sort, etc.
+
