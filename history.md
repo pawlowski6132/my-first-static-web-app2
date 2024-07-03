@@ -729,3 +729,35 @@ All the guitar*.html files work but use different methods. For GET, I think I'll
 
 Next I need to figure out how to just request ALL the records into a table. Maybe figure out how to call the first 20 records and have ability to sort, etc.
 
+## Tuesday 7/2/24
+
+I copied guitars4.html to guitars5.html. I just modified the URL to remove the ODATA stuff. When calling guitars5.html, you have to click the Submit button and it pulls ALL of the data.
+
+Also, i just double checked to make sure th POST method to add a record works and, it does
+
+guitars_post.html
+
+![Alt text](<images/full table pull.png>)
+
+![Alt text](<images/record add html.png>)
+
+![Alt text](<images/record add result.png>)
+
+What to do next?
+
+I think I can begin to develop something useful for DHL.
+
+Steps would be:
+
+1. Create a table
+2. Create a static webapp (or, use existing one)
+3. Create API with DAB (or, use existing one and adjust the json config)
+
+I think if I updated my DAB file it might looks somethig like this??
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/ads_middletown_input
+
+where ads_middletown_input is the name i've given to the new table.
+
+
+

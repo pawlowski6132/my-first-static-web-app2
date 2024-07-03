@@ -55,32 +55,6 @@
           ]
         }
       ]
-    },
-    "workload": {
-      "source": {
-        "object": "dbo.workload",
-        "type": "table"
-      },
-      "graphql": {
-        "enabled": true,
-        "type": {
-          "singular": "workload",
-          "plural": "workloads"
-        }
-      },
-      "rest": {
-        "enabled": true
-      },
-      "permissions": [
-        {
-          "role": "anonymous",
-          "actions": [
-            {
-              "action": "*"
-            }
-          ]
-        }
-      ]
     }
   }
 }
