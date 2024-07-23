@@ -759,5 +759,66 @@ https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/ads_middletown_
 
 where ads_middletown_input is the name i've given to the new table.
 
+## Tuesday 7/3/24
+
+I started down the journey of trying to build a web solution for DHL based on what I learned using my guitars_brand demo. 
+
+Here's what I did today:
+
+1. Got a sample of data from Emma (Dow Knoxville Excel)
+2. Understand required tables needed
+3. Took one table (workload) and created it in my personal Azure SQL DB, put some data in it
+4. Updated my DAB config file to include the new table
+5. Loaded a modified URL and I saw JSON output
+
+####  Create Table SQL
+```SQL
+CREATE TABLE workload (
+    date DATE,
+    shift NVARCHAR(50),
+    type NVARCHAR(50),
+    area NVARCHAR(50),
+    measure FLOAT)
+```
+
+#### Add Primary Key to the Table
+
+```SQL
+ALTER TABLE workload
+ADD id INT NOT NULL IDENTITY(1,1);
+
+ALTER TABLE workload
+ADD CONSTRAINT PK_workload_id PRIMARY KEY (id);
+```
+
+#### Add Some Test Data
+```SQL
+INSERT INTO workload (date, shift, type, area, measure)
+VALUES 
+('2024-07-01', '1', 'Actual', 'Container', 80),
+('2024-07-02', '1', 'Actual', 'Truckloads - Outbound', 90),
+('2024-07-03', '2', 'Plan', 'LTL', 23);
+```
+
+#### Data in the Database
+![Alt text](<images/workload data in db.png>)
+
+#### CLI Command to Update my DAB Config File
+```
+dab add workload --source dbo.workload --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+```
+#### New Possible URL
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/workload
+
+#### Returned results
+![Alt text](<images/workload data in browser.png>)
 
 
+From here now, I should be able to build a form that:
+
+1. Displays All Data
+2. Able to display search results
+3. Add a new record
+
+I need to design a form though that's easy to use and uses static data (shift, area, etc.) for the user to easily to add data. For example, I don't want to require the user to have to always type static information. Like in Excel, they don't type Shift, they just go to the shift tab. They don't TYPE work type, this go to the row they want to enter data into to and enter the data.
