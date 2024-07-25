@@ -133,6 +133,32 @@
           ]
         }
       ]
+    },
+    "attendance_tbl": {
+      "source": {
+        "object": "dbo.attendance_tbl",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "attendance_tbl",
+          "plural": "attendance_tbls"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
     }
   }
 }
