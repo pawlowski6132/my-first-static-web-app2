@@ -107,6 +107,32 @@
           ]
         }
       ]
+    },
+    "kpi_tbl": {
+      "source": {
+        "object": "dbo.kpi_tbl",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "kpi_tbl",
+          "plural": "kpi_tbls"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
     }
   }
 }
