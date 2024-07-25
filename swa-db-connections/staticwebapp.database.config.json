@@ -81,6 +81,32 @@
           ]
         }
       ]
+    },
+    "prod_tbl": {
+      "source": {
+        "object": "dbo.prod_tbl",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "prod_tbl",
+          "plural": "prod_tbls"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
     }
   }
 }
