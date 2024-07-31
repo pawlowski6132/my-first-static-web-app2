@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter by Brand post 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    
+</head>
+<body>
+    <form id="brandForm">
+        <label for="id_date">Date:</label>
+        <input type="date" id="id_date" name="date" placeholder="" required><br>
+
+        <label for="id_shift">Shift:</label>
+        <input type="text" id="id_shift" name="shift" placeholder="Shift" required><br>
+
+        <label for="id_type">Origin:</label>
+        <input type="text" id="id_type" name="type" placeholder="Type" required><br>
+
+        <label for="id_area">Area:</label>
+        <input type="text" id="id_area" name="area" placeholder="Area" required><br>
+
+        <label for="id_measure">Measure:</label>
+        <input type="number" id="id_measure" name="measure" placeholder="Measure" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+/*     document.getElementById('brandForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(document.getElementById('brandForm'));
+
+    const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands';
+
+    axios.post(url, formData)
+        .then(response => {
+        console.log('Response data:', response.data);
+        // Handle the response data here
+        })
+        .catch(error => {
+        console.error('There was an error!', error);
+        if (error.response) {
+            console.error('Response error:', error.response.data);
+        }
+        });
+}); */
+
+document.getElementById('brandForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Gather form data
+  const date = parseInt(document.getElementById('id_date').value);
+  const shift = document.getElementById('id_shift').value;
+  const type = document.getElementById('id_type').value;
+  const area = document.getElementById('id_area').value;
+  const measure = parseInt(document.getElementById('id_measure').value);
+
+  // Create a JSON object
+    const payload = {
+        date,
+        shift,
+        type,
+        area,
+        measure
+    };
+
+    // Set Content-Type header manually
+    const headers = {
+        'Content-Type': 'application/json'
+    };
+
+    const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/workload';
+
+    axios.post(url, payload, { headers })
+        .then(response => {
+        console.log('Response data:', response.data);
+        // Handle the response data here
+        })
+        .catch(error => {
+        console.error('There was an error!', error);
+        if (error.response) {
+            console.error('Response error:', error.response.data);
+        }
+        });
+    });
+
+
+    </script>
+</body>
+</html>
