@@ -28,10 +28,11 @@
     <table id="resultsTable">
         <thead>
             <tr>
-                <th>Brand</th>
-                <th>Origin</th>
-                <th>URL</th>
-                <th>Established</th>
+                <th>date</th>
+                <th>shift</th>
+                <th>type</th>
+                <th>area</th>
+                <th>measure</th>
             </tr>
         </thead>
         <tbody id="data"></tbody>
@@ -42,7 +43,7 @@
             event.preventDefault();
             const brand = document.getElementById('id_brand').value;
             const encodedBrand = encodeURIComponent(`brand eq '${brand}'`);
-            const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands`;
+            const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/workload`;
 
             console.log('Request URL:', url); // Log the URL
 
@@ -66,10 +67,11 @@
             data.forEach(item => { // iterates through each item in the data array.
                 const row = document.createElement('tr'); // creates a new table row element
                 row.innerHTML = `
-                    <td>${item.brand}</td>
-                    <td>${item.origin}</td>
-                    <td>${item.mfg_url}</td>
-                    <td>${item.established}</td>
+                    <td>${item.date}</td>
+                    <td>${item.shift}</td>
+                    <td>${item.type}</td>
+                    <td>${item.area}</td>
+                    <td>${item.measure}</td>
                 `;
                 tableBody.appendChild(row); // appends the row to the table body
             });

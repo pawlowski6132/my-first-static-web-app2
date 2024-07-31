@@ -79,3 +79,9 @@ https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/workload
 1. When put into the browser URL gives these results:
 
 ![Alt text](<images/workload api and results.png>)
+
+Other APIs
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/attendance_tbl
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/kpi_tbl
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/prod_tbl

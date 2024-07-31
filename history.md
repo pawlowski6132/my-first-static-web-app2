@@ -822,3 +822,46 @@ From here now, I should be able to build a form that:
 3. Add a new record
 
 I need to design a form though that's easy to use and uses static data (shift, area, etc.) for the user to easily to add data. For example, I don't want to require the user to have to always type static information. Like in Excel, they don't type Shift, they just go to the shift tab. They don't TYPE work type, this go to the row they want to enter data into to and enter the data.
+
+## Thursday 7/25/24
+
+I tested reviewed the past notes and was able to recreate the process in streamlied fashion to quickly build out three more tables and add them to the DAB json file.
+
+1. Create the table manually
+2. Create a PK column
+3. Add test data
+
+All this can be done in one SQL statement.
+
+```SQL
+CREATE TABLE attendance_tbl --update this line
+(
+    date DATE,
+    shift NVARCHAR(50),
+	area NVARCHAR(50),
+    measure FLOAT)
+
+ALTER TABLE attendance_tbl --update this line
+ADD id INT NOT NULL IDENTITY(1,1);
+
+ALTER TABLE attendance_tbl --update this line
+ADD CONSTRAINT PK_attendance_tbl_id PRIMARY KEY (id); --update this line
+
+
+INSERT INTO attendance_tbl(date, shift, area, measure) --update this line
+VALUES 
+('2024-07-01', '1', 'actual hc', 77), --update this line
+('2024-07-01', '1', 'planned hc', 127); --update this line
+```
+
+After that, just go to TERMINAL and execute a CLI DAB statement to update the JSON config file.
+
+Example:
+dab add attendance_tbl --source dbo.attendance_tbl --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
+Look at staticwebbapp.database.config.json to see the new entry.
+
+Look at the URL with the new DAB entry name to see the results of what was just put in the table.
+
+Example:
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/kpi_tbl

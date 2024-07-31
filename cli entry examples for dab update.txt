@@ -1,0 +1,30 @@
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?%24filter=Brand+eq+%27Gibson%27
+
+works:
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?$filter=brand%20eq%20%27Gibson%27
+
+
+with javascript:
+
+https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands?%24filter=brand+eq+%27Gibson%27
+
+
+dab add workload --source "dbo.workload" --source.type "table" --source.key-fields "id" --permissions "anonymous:*"
+
+dab add workload -c "C:\Users\pawlo\my-first-static-web-app2\staticwebapp.database.config.json" --source dbo.workload --permissions "anonymous:*" --source.key-fields id
+
+dab add Book -c "dab-config.MsSql.json" --source dbo.books --permissions "anonymous:*"
+
+
+************************************
+7/25/24 This works
+
+dab add workload --source dbo.workload --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
+dab add prod_tbl --source dbo.prod_tbl --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
+dab add kpi_tbl --source dbo.kpi_tbl --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
+dab add attendance_tbl --source dbo.attendance_tbl --permissions "anonymous:*" --config "swa-db-connections/staticwebapp.database.config.json"
+
