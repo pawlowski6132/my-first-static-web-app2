@@ -30,31 +30,14 @@
     </form>
 
     <script>
-/*     document.getElementById('brandForm').addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const formData = new FormData(document.getElementById('brandForm'));
-
-    const url = 'https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands';
-
-    axios.post(url, formData)
-        .then(response => {
-        console.log('Response data:', response.data);
-        // Handle the response data here
-        })
-        .catch(error => {
-        console.error('There was an error!', error);
-        if (error.response) {
-            console.error('Response error:', error.response.data);
-        }
-        });
-}); */
 
 document.getElementById('brandForm').addEventListener('submit', function(event) {
   event.preventDefault();
 
   // Gather form data
-  const date = parseInt(document.getElementById('id_date').value);
+  //const date = parseInt(document.getElementById('id_date').value);
+  const date = document.getElementById('id_date').value;
   const shift = document.getElementById('id_shift').value;
   const type = document.getElementById('id_type').value;
   const area = document.getElementById('id_area').value;
