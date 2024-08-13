@@ -865,3 +865,25 @@ Look at the URL with the new DAB entry name to see the results of what was just 
 
 Example:
 https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/kpi_tbl
+
+## Thursday 8/1/24
+
+I added a new page to be able to add data to the workload table. I couldn't get it to work at first and was getting errors but, it's hard to troubleshoot. The feedback is not clear. I had to work through the date datatypes and it finally worked. I wanted to use an input type as date picker but, couldn't get that to be accepted as a datatype into the table. I had to change it to text and it worked.
+
+However, I would eventually need to figure out how to allow the user to use a date picker input type.
+
+...\workload_post.html
+
+------------------
+
+I'm now trying to use the Endpoint API to delete. I can get it to work in Postman using one technique but not using the technique I think I'll use as part of the Axios javascript solutio.
+
+Here's the Postman entry:
+
+![Alt text](images/delete.png)
+
+I got it to work referencing the documentation here:
+
+https://learn.microsoft.com/en-us/azure/data-api-builder/rest
+
+I ran this and it deleted a record (Collins SK 5) from the table. I need to understand how to write the javascript code to do this in HTML.
