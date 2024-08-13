@@ -21,13 +21,15 @@
             const brand_sk = parseInt(document.getElementById('id_brand_sk').value);
 
             // Set Content-Type header manually
-            const headers = {
-                'Content-Type': 'application/json'
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             };
 
             const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands/${brand_sk}`;
 
-            axios.delete(url, { headers })
+            axios.delete(url, config)
                 .then(response => {
                     console.log('Response data:', response.data);
                     // Handle the response data here
@@ -42,3 +44,4 @@
     </script>
 </body>
 </html>
+
