@@ -20,7 +20,7 @@
       // Gather form data
       const brand_sk = parseInt(document.getElementById('id_brand_sk').value);
 
-      const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands/${brand_sk}`;
+      const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands/brand_sk/${brand_sk}`;
 
       axios.delete(url)
         .then(response => {
