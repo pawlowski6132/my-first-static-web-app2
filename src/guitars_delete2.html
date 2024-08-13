@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter by Brand post 5</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form id="brandForm">
+        <label for="id_brand_sk">Brand SK:</label>
+        <input type="number" id="id_brand_sk" name="brand_sk" placeholder="24" required><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('brandForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Gather form data
+            const brand_sk = parseInt(document.getElementById('id_brand_sk').value);
+
+            // Set Content-Type header manually
+            const headers = {
+                'Content-Type': 'application/json'
+            };
+
+            const url = `https://jolly-tree-09d677910.4.azurestaticapps.net/data-api/rest/guitar_brands/${brand_sk}`;
+
+            axios.delete(url, { headers })
+                .then(response => {
+                    console.log('Response data:', response.data);
+                    // Handle the response data here
+                })
+                .catch(error => {
+                    console.error('There was an error!', error);
+                    if (error.response) {
+                        console.error('Response error:', error.response.data);
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
