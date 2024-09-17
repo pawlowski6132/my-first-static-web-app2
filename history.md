@@ -887,3 +887,14 @@ I got it to work referencing the documentation here:
 https://learn.microsoft.com/en-us/azure/data-api-builder/rest
 
 I ran this and it deleted a record (Collins SK 5) from the table. I need to understand how to write the javascript code to do this in HTML.
+
+## Tuesday 8/13/24
+
+I got a web page with DELETE to work:
+
+guitars_delete2.html
+
+I'm not going to create EDIT just yet. I have CREATE, READ, DELETE. The records are so small that I should be fine.
+
+Now I have to design a page to be able to Enter, Display and Delete all on one page.
+
